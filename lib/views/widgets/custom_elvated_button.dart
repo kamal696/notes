@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../constant.dart';
+
 class CustomELvatedButton extends StatelessWidget {
   const CustomELvatedButton({Key? key}) : super(key: key);
 
@@ -7,10 +9,10 @@ class CustomELvatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 44,
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color.fromARGB(255, 41, 228, 235),
+          backgroundColor: KPrimaryColor,
         ),
         onPressed: () {},
         child: const Text(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notes/views/notes_views_body.dart';
+
 import 'package:notes/views/widgets/custom_show_modal_sheet.dart';
+import 'package:notes/views/widgets/note_view_body.dart';
 
 class NotesViews extends StatelessWidget {
   const NotesViews({Key? key}) : super(key: key);

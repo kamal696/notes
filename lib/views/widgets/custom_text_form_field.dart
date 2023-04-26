@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
 
+import '../../constant.dart';
+
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField(
-      {super.key, required this.title, @required this.padding});
-  final Color colorBlue = const Color.fromARGB(255, 41, 228, 235);
+  const CustomTextFormField({super.key, required this.title, this.maxLine = 1});
+
   final String title;
-  final EdgeInsets? padding;
+
+  final int maxLine;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      cursorColor: KPrimaryColor,
+      maxLines: maxLine,
       decoration: InputDecoration(
-        contentPadding: padding,
-        hintText: title,
-        hintStyle: TextStyle(color: colorBlue),
-        focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.white,
-          ),
-        ),
-        enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white),
-            borderRadius: BorderRadius.circular(8)),
+          hintText: title,
+          hintStyle: const TextStyle(color: KPrimaryColor),
+          focusedBorder: outLineInputBorder(KPrimaryColor),
+          enabledBorder: outLineInputBorder()),
+    );
+  }
+
+  OutlineInputBorder outLineInputBorder([color]) {
+    return OutlineInputBorder(
+      borderSide: BorderSide(
+        color: color ?? Colors.white,
       ),
     );
   }
