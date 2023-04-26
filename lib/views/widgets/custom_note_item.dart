@@ -17,14 +17,14 @@ class CustomNoteItem extends StatelessWidget {
           child: ListTile(
             title: const Text(
               "Flutter Tips",
-              style: TextStyle(color: Colors.black, fontSize: 24),
+              style: TextStyle(color: Colors.black, fontSize: 28),
             ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 18),
               child: Text(
                 "Build your career with kamal ibrahim",
                 style: TextStyle(
-                    color: Colors.black.withOpacity(0.5), fontSize: 18),
+                    color: Colors.black.withOpacity(0.5), fontSize: 20),
               ),
             ),
             trailing: const Icon(
@@ -36,7 +36,8 @@ class CustomNoteItem extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(right: 28, bottom: 24, top: 24),
           child: Text("April 26,2023",
-              style: TextStyle(color: Colors.black.withOpacity(0.5))),
+              style: TextStyle(
+                  color: Colors.black.withOpacity(0.5), fontSize: 16)),
         )
       ]),
     );
