@@ -2,13 +2,13 @@ import 'package:awesome_icons/awesome_icons.dart';
 import 'package:flutter/material.dart';
 
 class CustomNoteItem extends StatelessWidget {
-  const CustomNoteItem({Key? key}) : super(key: key);
-
+  const CustomNoteItem({super.key, required this.color});
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.amber[200],
+        color: color,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
