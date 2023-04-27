@@ -12,7 +12,7 @@ class CustomELvatedButton extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: KPrimaryColor,
+          backgroundColor: kPrimaryColor,
         ),
         onPressed: () {},
         child: const Text(
