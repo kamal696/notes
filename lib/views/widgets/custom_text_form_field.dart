@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../constant.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({super.key, required this.title, this.maxLine = 1});
+  const CustomTextFormField({super.key, required this.hint, this.maxLine = 1});
 
-  final String title;
+  final String hint;
 
   final int maxLine;
   @override
@@ -14,7 +14,7 @@ class CustomTextFormField extends StatelessWidget {
       cursorColor: KPrimaryColor,
       maxLines: maxLine,
       decoration: InputDecoration(
-          hintText: title,
+          hintText: hint,
           hintStyle: const TextStyle(color: KPrimaryColor),
           focusedBorder: outLineInputBorder(KPrimaryColor),
           enabledBorder: outLineInputBorder()),

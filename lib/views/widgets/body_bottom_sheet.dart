@@ -16,13 +16,13 @@ class CustomBodyNoteBottomSheet extends StatelessWidget {
         child: Column(
           children: [
             CustomTextFormField(
-              title: "Title",
+              hint: "Title",
             ),
             SizedBox(
               height: 18,
             ),
             CustomTextFormField(
-              title: "Content",
+              hint: "Content",
               maxLine: 6,
             ),
             SizedBox(
