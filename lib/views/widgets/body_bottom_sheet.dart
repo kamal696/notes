@@ -51,21 +51,27 @@ class _CustomBodyNoteBottomSheetState extends State<CustomBodyNoteBottomSheet> {
               const SizedBox(
                 height: 20,
               ),
-              CustomELvatedButton(
-                onPressed: () {
-                  if (formKey.currentState!.validate()) {
-                    formKey.currentState!.save();
+              BlocBuilder<AddNoteCubit, AddNoteState>(
+                builder: (context, state) {
+                  return CustomELvatedButton(
+                    isLoding: state is AddNoteLoading ? true : false,
+                    onPressed: () {
+                      if (formKey.currentState!.validate()) {
+                        formKey.currentState!.save();
 
-                    var noteModel = NoteModel(
-                        title: title!,
-                        subTitle: subTitle!,
-                        date: DateTime.now().toString(),
-                        color: Colors.black.value);
-                    BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
-                  } else {
-                    autoValidateMode = AutovalidateMode.always;
-                    setState(() {});
-                  }
+                        var noteModel = NoteModel(
+                            title: title!,
+                            subTitle: subTitle!,
+                            date: DateTime.now().toString(),
+                            color: Colors.black.value);
+                        BlocProvider.of<AddNoteCubit>(context)
+                            .addNote(noteModel);
+                      } else {
+                        autoValidateMode = AutovalidateMode.always;
+                        setState(() {});
+                      }
+                    },
+                  );
                 },
               )
             ],

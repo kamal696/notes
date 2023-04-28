@@ -24,12 +24,9 @@ class NotesViews extends StatelessWidget {
                           topRight: Radius.circular(12))),
                   context: context,
                   builder: (context) {
-                    return SizedBox(
-                      height: MediaQuery.of(context).size.height,
-                      child: BlocProvider(
-                          create: (context) => AddNoteCubit(),
-                          child: const CustomAddNoteBottomSheet()),
-                    );
+                    return BlocProvider(
+                        create: (context) => AddNoteCubit(),
+                        child: const CustomAddNoteBottomSheet());
                   });
             },
             icon: const Icon(
