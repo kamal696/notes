@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:notes/views/widgets/edit_note_view_body.dart';
 
 class CustomNoteItem extends StatelessWidget {
-  const CustomNoteItem({super.key, required this.color});
-  final Color color;
+  const CustomNoteItem({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -13,7 +15,7 @@ class CustomNoteItem extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: color,
+          color: Colors.red,
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [

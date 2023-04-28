@@ -13,7 +13,9 @@ class CustomAddNoteBottomSheet extends StatelessWidget {
       listener: (context, state) {
         if (state is AddNoteSucsses) {
           Navigator.pop(context);
-        } else if (state is AddNoteFailure) {}
+        } else if (state is AddNoteFailure) {
+          print("failuer ${state.errorMassege}");
+        }
       },
       builder: (context, state) {
         return ModalProgressHUD(
