@@ -45,7 +45,7 @@ class _CustomBodyNoteBottomSheetState extends State<CustomBodyNoteBottomSheet> {
                 maxLine: 6,
               ),
               const SizedBox(
-                height: 75,
+                height: 20,
               ),
               CustomELvatedButton(
                 onPressed: () {

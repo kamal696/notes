@@ -21,7 +21,10 @@ class NotesViews extends StatelessWidget {
                           topRight: Radius.circular(12))),
                   context: context,
                   builder: (context) {
-                    return const CustomAddNoteBottomSheet();
+                    return SizedBox(
+                      height: MediaQuery.of(context).size.height,
+                      child: const CustomAddNoteBottomSheet(),
+                    );
                   });
             },
             icon: const Icon(

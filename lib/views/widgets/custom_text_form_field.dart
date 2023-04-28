@@ -26,10 +26,13 @@ class CustomTextFormField extends StatelessWidget {
       cursorColor: kPrimaryColor,
       maxLines: maxLine,
       decoration: InputDecoration(
-          hintText: hint,
-          hintStyle: const TextStyle(color: kPrimaryColor),
-          focusedBorder: outLineInputBorder(kPrimaryColor),
-          enabledBorder: outLineInputBorder()),
+        hintText: hint,
+        hintStyle: const TextStyle(color: kPrimaryColor),
+        focusedBorder: outLineInputBorder(kPrimaryColor),
+        enabledBorder: outLineInputBorder(),
+        focusedErrorBorder: outLineInputBorder(Colors.red),
+        errorBorder: outLineInputBorder(Colors.red),
+      ),
     );
   }
 
