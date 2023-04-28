@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes/cubit/add_not_cubit/add_note_cubit.dart';
 
 import 'package:notes/views/widgets/custom_show_modal_sheet.dart';
 import 'package:notes/views/widgets/note_view_body.dart';
@@ -24,7 +26,9 @@ class NotesViews extends StatelessWidget {
                   builder: (context) {
                     return SizedBox(
                       height: MediaQuery.of(context).size.height,
-                      child: const CustomAddNoteBottomSheet(),
+                      child: BlocProvider(
+                          create: (context) => AddNoteCubit(),
+                          child: const CustomAddNoteBottomSheet()),
                     );
                   });
             },
