@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+
 import 'package:notes/cubit/add_not_cubit/add_note_cubit.dart';
 import 'package:notes/views/widgets/body_bottom_sheet.dart';
 
