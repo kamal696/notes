@@ -5,6 +5,7 @@ import 'package:notes/models/note_models.dart';
 import 'package:notes/views/widgets/custom_elvated_button.dart';
 
 import 'package:notes/views/widgets/custom_text_form_field.dart';
+import 'package:intl/intl.dart';
 
 class CustomBodyNoteBottomSheet extends StatefulWidget {
   const CustomBodyNoteBottomSheet({
@@ -21,6 +22,8 @@ class _CustomBodyNoteBottomSheetState extends State<CustomBodyNoteBottomSheet> {
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
 
   String? title, subTitle;
+  String cdate2 = DateFormat("MMMM, dd, yyyy").format(DateTime.now());
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -66,8 +69,8 @@ class _CustomBodyNoteBottomSheetState extends State<CustomBodyNoteBottomSheet> {
                         var noteModel = NoteModel(
                             title: title!,
                             subTitle: subTitle!,
-                            date: DateTime.now().toString(),
-                            color: Colors.black.value);
+                            date: cdate2,
+                            color: Colors.blue.value);
                         BlocProvider.of<AddNoteCubit>(context)
                             .addNote(noteModel);
                       } else {

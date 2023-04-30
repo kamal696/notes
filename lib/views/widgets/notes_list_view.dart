@@ -5,7 +5,9 @@ import 'package:notes/models/note_models.dart';
 import 'package:notes/views/widgets/custom_note_item.dart';
 
 class CustomNotesListView extends StatelessWidget {
-  const CustomNotesListView({super.key});
+  const CustomNotesListView({
+    super.key,
+  });
   // final List colorsItem = const [
   //   Colors.red,
   //   Colors.yellow,
@@ -17,7 +19,7 @@ class CustomNotesListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NoteCubit, NoteState>(
       builder: (context, state) {
-        List<NoteModel> notes = BlocProvider.of<NoteCubit>(context).notes ?? [];
+        List<NoteModel> notes = BlocProvider.of<NoteCubit>(context).notes!;
         return Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 16),
@@ -25,9 +27,11 @@ class CustomNotesListView extends StatelessWidget {
                 itemCount: notes.length,
                 padding: EdgeInsets.zero,
                 itemBuilder: (context, index) {
-                  return const Padding(
-                    padding: EdgeInsets.only(top: 10),
-                    child: CustomNoteItem(),
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: CustomNoteItem(
+                      notes: notes[index],
+                    ),
                   );
                 }),
           ),
