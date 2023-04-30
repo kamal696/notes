@@ -12,33 +12,27 @@ class CustomNotesListView extends StatelessWidget {
   //   Colors.blue,
   //   Colors.green
   // ];
-  
+
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        child: BlocConsumer<NoteCubit, NoteState>(
-          listener: (context, state) {
-            if (state is NoteSucsses) {
-              BlocProvider.of<NoteCubit>(context).fetchNote();
-            } else if (state is NoteFailure) {
-              print("failure ${state.errorMassege}");
-            }
-          },
-          builder: (context, state) {
-            return ListView.builder(
-              itemCount: ,
+    return BlocBuilder<NoteCubit, NoteState>(
+      builder: (context, state) {
+        List<NoteModel> notes = BlocProvider.of<NoteCubit>(context).notes ?? [];
+        return Expanded(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            child: ListView.builder(
+                itemCount: notes.length,
                 padding: EdgeInsets.zero,
                 itemBuilder: (context, index) {
                   return const Padding(
                     padding: EdgeInsets.only(top: 10),
                     child: CustomNoteItem(),
                   );
-                });
-          },
-        ),
-      ),
+                }),
+          ),
+        );
+      },
     );
   }
 }
