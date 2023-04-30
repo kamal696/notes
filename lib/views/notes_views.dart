@@ -11,32 +11,29 @@ class NotesViews extends StatelessWidget {
   static String id = "NotesView";
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NoteCubit(),
-      child: Scaffold(
-        body: const NotesViewBody(),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: IconButton(
-              onPressed: () {
-                showModalBottomSheet(
-                    isScrollControlled: true,
-                    shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(12),
-                            topRight: Radius.circular(12))),
-                    context: context,
-                    builder: (context) {
-                      return BlocProvider(
-                          create: (context) => AddNoteCubit(),
-                          child: const CustomAddNoteBottomSheet());
-                    });
-              },
-              icon: const Icon(
-                Icons.add,
-                size: 28,
-              )),
-        ),
+    return Scaffold(
+      body: const NotesViewBody(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: IconButton(
+            onPressed: () {
+              showModalBottomSheet(
+                  isScrollControlled: true,
+                  shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(12),
+                          topRight: Radius.circular(12))),
+                  context: context,
+                  builder: (context) {
+                    return BlocProvider(
+                        create: (context) => AddNoteCubit(),
+                        child: const CustomAddNoteBottomSheet());
+                  });
+            },
+            icon: const Icon(
+              Icons.add,
+              size: 28,
+            )),
       ),
     );
   }
