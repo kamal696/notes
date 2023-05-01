@@ -40,6 +40,7 @@ class _CustomBodyNoteBottomSheetState extends State<CustomBodyNoteBottomSheet> {
             mainAxisSize: MainAxisSize.min,
             children: [
               CustomTextFormField(
+                text: "",
                 onSaved: (value) {
                   title = value;
                 },
@@ -49,6 +50,7 @@ class _CustomBodyNoteBottomSheetState extends State<CustomBodyNoteBottomSheet> {
                 height: 18,
               ),
               CustomTextFormField(
+                text: "",
                 onSaved: (value) {
                   subTitle = value;
                 },

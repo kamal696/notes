@@ -4,15 +4,24 @@ import '../../constant.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField(
-      {super.key, required this.hint, this.maxLine = 1, this.onSaved});
+      {super.key,
+      required this.hint,
+      this.maxLine = 1,
+      this.onSaved,
+      this.onChanged,
+      required this.text});
 
   final String hint;
 
   final int maxLine;
   final void Function(String?)? onSaved;
+  final void Function(String)? onChanged;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: text,
+      onChanged: onChanged,
       onSaved: onSaved,
       // if( value?.isEmpty ?? true) : one way to if validate is short jsut
       validator: (value) {
